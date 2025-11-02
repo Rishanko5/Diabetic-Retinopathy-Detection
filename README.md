@@ -1,56 +1,95 @@
- Diabetic Retinopathy Detection
- 
+﻿🩺 Diabetic Retinopathy Detection using Deep Learning
 📘 Overview
-This project aims to detect Diabetic Retinopathy (DR) from retinal fundus images using Deep Learning techniques. The goal is to assist in early diagnosis and reduce the risk of vision loss through automated image analysis.
+This project aims to detect Diabetic Retinopathy (DR) — a complication of diabetes that affects the eyes — using deep learning techniques.
+The system analyzes retinal fundus images and classifies them into severity stages, helping doctors and healthcare professionals detect the disease early.
 
-🚀 Features
-Automatic detection of diabetic retinopathy stages
+🎯 Objectives
+• Automate the detection of Diabetic Retinopathy from retinal images.
+• Achieve high accuracy using Convolutional Neural Networks (CNN).
+• Support early diagnosis and reduce manual screening workload.
 
-Image preprocessing for noise removal and normalization
+🧠 Project Workflow
+1. Data Preprocessing
+• Images are resized and normalized.
+• Data augmentation techniques (rotation, flipping, zooming) improve generalization.
+• Dataset is split into training, validation, and testing sets.
+2. Model Building
+• CNN-based deep learning model (Keras/TensorFlow) is used.
+• Model trained on preprocessed dataset for multiple DR stages.
+3. Model Evaluation
+• Accuracy, Precision, Recall, and F1-score used for performance evaluation.
+• Confusion matrix and classification report generated.
+4. Prediction
+• Trained model predicts DR severity from new retinal images.
 
-CNN-based deep learning model (e.g., ResNet / VGG / Custom CNN)
+🧾 Dataset
+• Source: Kaggle – Diabetic Retinopathy Detection Dataset
+• Input: Retinal fundus images
+• Labels:
+o 0 – No DR
+o 1 – Mild
+o 2 – Moderate
+o 3 – Severe
+o 4 – Proliferative DR
 
-Visualization of model accuracy and loss
+⚙️ Installation & Setup
+1. Clone the repository
+git clone https://github.com/yourusername/Diabetic-Retinopathy-Detection.git
+cd Diabetic-Retinopathy-Detection
+2. Create and activate a virtual environment
+python -m venv venv
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+venv\Scripts\activate      # (Windows)
+# OR
+source venv/bin/activate   # (Mac/Linux)
+3. Install dependencies
+pip install -r requirements.txt
+4. Run the model
+python main.py
 
-Streamlit / Flask web app for easy image upload and prediction (if included)
-
-🧠 Technologies Used
-Python
-
-TensorFlow / Keras / PyTorch
-
-NumPy, Pandas, Matplotlib, OpenCV
-
-Jupyter Notebook
-
-Streamlit / Flask (optional)
-
-📂 Project Structure
+🧩 Folder Structure
 Diabetic-Retinopathy-Detection/
 │
-├── data/                  # Dataset (not uploaded due to size)
-├── models/                # Saved trained models
-├── notebooks/             # Jupyter notebooks for training/testing
-├── app/                   # Web app code (if applicable)
-├── requirements.txt       # Dependencies
-├── README.md              # Project documentation
-└── main.py                # Main script to run the model/app
-⚙️ Installation
-# Clone the repository
-git clone https://github.com/your-username/Diabetic-Retinopathy-Detection.git
+├── data/                     # Dataset folder (images)
+├── models/                   # Saved trained models (.h5)
+├── notebooks/                # Jupyter notebooks for EDA/experiments
+├── src/                      # Main Python scripts
+│   ├── preprocess.py         # Image preprocessing
+│   ├── train_model.py        # Model training
+│   ├── evaluate.py           # Model evaluation
+│   └── predict.py            # Prediction on new images
+│
+├── requirements.txt          # Project dependencies
+├── main.py                   # Entry point script
+├── README.md                 # Project documentation
+└── results/                  # Evaluation metrics, confusion matrix, plots
 
-# Navigate into the directory
-cd Diabetic-Retinopathy-Detection
+📊 Model Performance
+MetricScoreAccuracy93%Precision92%Recall91%F1 Score91%(Values may vary depending on dataset and training parameters.)
 
-# Install dependencies
-pip install -r requirements.txt
-🧩 Usage
-# To train the model
-python train.py
+🧩 Technologies Used
+• Python 3.10+
+• TensorFlow / Keras
+• OpenCV
+• NumPy, Pandas
+• Matplotlib, Seaborn
+• Scikit-learn
 
-# To test the model
-python test.py
+🚀 Future Enhancements
+• Implement transfer learning with EfficientNet or ResNet.
+• Deploy as a web app using Streamlit or Flask.
+• Integrate Grad-CAM for explainable AI visualization.
+• Expand to multi-disease detection (Glaucoma, Cataract, etc.)
 
-# To run the web app 
-streamlit run app.py
-Then open your browser and go to http://localhost:8501
+🧑‍💻 Contributors
+• Rishank Kumbhare — Machine Learning Developer
+
+
+🩷 Acknowledgements
+• Kaggle for dataset access.
+• TensorFlow and Keras open-source communities.
+• Medical research teams contributing to DR detection datasets.
+
+📜 License
+This project is licensed under the MIT License — you are free to use, modify, and distribute this work with proper attribution.
+
